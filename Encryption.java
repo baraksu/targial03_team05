@@ -1,3 +1,4 @@
+
 /**
  * Write a description of class Encryption here.
  *
@@ -6,8 +7,8 @@
  */
 public class Encryption
 {
-   \\ shoham's part
-{
+   // shoham's part
+
         public static void main(String[] args){
         
             System.out.println("Welcome to the Encryption / Decryption Program");
@@ -71,7 +72,7 @@ public class Encryption
             }
             return sentence;
         }
-        }
+        
     //izakson's part: change the original vowels to signs.
     public static String getNewVowels(String sentence) {
             sentence = sentence.replace('u', '&');
@@ -91,7 +92,5 @@ public class Encryption
             return sentence;
         
     }
-    
-   
-    
 }
+  
