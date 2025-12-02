@@ -6,7 +6,7 @@
  */
 public class Encryption
 {
-    public class Encryption \\ shoham's part
+   \\ shoham's part
 {
         public static void main(String[] args){
         
