@@ -1,18 +1,47 @@
+// Shoham main function
 import java.util.*;
-public class Encryption
-{
-   // shoham's part
+pubic class Encryption{
+public static void main(String[] args){
+    Scanner reader = new Scanner(System.in);
 
-        public static void main(String[] args){
-           Scanner reader = new Scanner(System.in);
-        
-            System.out.println("Welcome to the Encryption / Decryption Program");
-            System.out.println("Enter 1 for Encrypt | 2 for Decrypt");
-            int choice = reader.nextInt();
-            if (choice != 1 && choice != 2){
-            System.out.println(choice +" is not a valid choice");
-            return;}
-            if (choice == 1){
+    System.out.println("Welcome to the Encryption / Decryption Program");
+    System.out.println("Enter 1 for Encrypt | 2 for Decrypt");
+
+    int choice = reader.nextInt();
+    reader.nextLine();
+
+    if (choice != 1 && choice != 2) {
+        System.out.println(choice + " is not a valid choice");
+        return;
+    }
+
+    System.out.println("Enter up to 3 words sentence");
+    String sentence = reader.nextLine();
+
+    int numWords = countWords(sentence);
+
+    if (numWords > 3) {
+        System.out.println(sentence + " contains more than 3 words");
+        return;
+    }
+
+    if (choice == 1) {
+        sentence = shiftWordsRight(sentence, numWords);
+        sentence = shiftCharsRight(sentence, numWords);
+        sentence = getNewVowels(sentence);
+
+        System.out.println("The encrypted sentence: " + sentence);
+    }
+
+    if (choice == 2) {
+        sentence = getOriginalVowels(sentence);
+        sentence = shiftCharsLeft(sentence, numWords);
+        sentence = shiftWordsLeft(sentence, numWords);
+
+        System.out.println("The decrypted sentence: " + sentence);
+    }
+}
+
 
             }
     
@@ -93,5 +122,23 @@ public class Encryption
             return sentence;
         
     }
+   // Nevo's part 4
+   public static String shiftCharsRight(String sentence, int numWords) {
+    int n = sentence.length();
+    if (n == 0) return sentence;
+    
+    int k = numWords % n; 
+
+    return sentence.substring(n - k) + sentence.substring(0, n - k);
+}
+   // Nevo's part 5
+public static String shiftCharsLeft(String sentence, int numWords) {
+    int n = sentence.length();
+    if (n == 0) return sentence;
+
+    int k = numWords % n;
+
+    return sentence.substring(k) + sentence.substring(0, k);
+}
 }
   
