@@ -1,18 +1,19 @@
-
-/**
- * Write a description of class Encryption here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+import java.util.*;
 public class Encryption
 {
    // shoham's part
 
         public static void main(String[] args){
+           Scanner reader = new Scanner(System.in);
         
             System.out.println("Welcome to the Encryption / Decryption Program");
-        
+            System.out.println("Enter 1 for Encrypt | 2 for Decrypt");
+            int choice = reader.nextInt();
+            if (choice != 1 && choice != 2){
+            System.out.println(choice +" is not a valid choice");
+            return;}
+            if (choice == 1){
+
             }
     
         public static int countWords (String sentence) 
