@@ -1,6 +1,6 @@
 // Shoham main function
 import java.util.*;
-pubic class Encryption{
+public class Encryption{
 public static void main(String[] args){
     Scanner reader = new Scanner(System.in);
 
@@ -40,8 +40,6 @@ public static void main(String[] args){
 
         System.out.println("The decrypted sentence: " + sentence);
     }
-}
-
 
             }
     
